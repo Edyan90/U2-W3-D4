@@ -1,8 +1,10 @@
 const URL1 = "https://api.pexels.com/v1/search?query=landscape";
-const URL2 = "https://api.pexels.com/v1/search?query=music";
+const URL2 = "https://api.pexels.com/v1/search?query=wave";
 const loadImg1 = document.getElementById("loadImg1");
 const loadImg2 = document.getElementById("loadImg2");
+const galleria = document.getElementById("galleria");
 loadImg1.addEventListener("click", () => {
+  galleria.innerHTML = "";
   fetch(URL1, {
     method: "GET",
     headers: {
@@ -59,6 +61,7 @@ loadImg1.addEventListener("click", () => {
         cardBody.appendChild(text);
         cardBody.appendChild(divButtonsFlex);
         divButtonsFlex.appendChild(divButtons);
+        divButtonsFlex.appendChild(small);
         divButtons.appendChild(buttonView);
         divButtons.appendChild(buttonEdit);
         card.appendChild(img);
@@ -70,6 +73,7 @@ loadImg1.addEventListener("click", () => {
     .catch((err) => console.log(err));
 });
 loadImg2.addEventListener("click", () => {
+  galleria.innerHTML = "";
   fetch(URL2, {
     method: "GET",
     headers: {
@@ -119,13 +123,17 @@ loadImg2.addEventListener("click", () => {
         text.innerText =
           "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.";
         buttonView.innerText = "View";
-        buttonEdit.innerText = "Edit";
-        small.innerText = `9mins`;
+        buttonEdit.innerText = "Hide";
+        buttonEdit.addEventListener("click", () => {
+          col.classList.add("d-none");
+        });
+        small.innerText = `${fotoCorrente.id}`;
 
         cardBody.appendChild(title);
         cardBody.appendChild(text);
         cardBody.appendChild(divButtonsFlex);
         divButtonsFlex.appendChild(divButtons);
+        divButtonsFlex.appendChild(small);
         divButtons.appendChild(buttonView);
         divButtons.appendChild(buttonEdit);
         card.appendChild(img);
