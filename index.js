@@ -196,9 +196,9 @@ searchForm.addEventListener("submit", (event) => {
         card.setAttribute("style", "width: 18rem");
         title.innerText = "Lorem Ipsum";
         text.innerText =
-          "Questa è una carta più ampia con del testo di supporto sotto come guida naturale a contenuti aggiuntivi. Questo contenuto è un po' più lungo.";
-        buttonView.innerText = "Visualizza";
-        buttonEdit.innerText = "Nascondi";
+          "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.";
+        buttonView.innerText = "View";
+        buttonEdit.innerText = "Hide";
         buttonEdit.addEventListener("click", () => {
           col.classList.add("d-none");
         });
